@@ -1,22 +1,17 @@
-# Project X prototype
+# Project X
 
-A League-first multi-game companion prototype with a working dashboard, champion explorer, match review, and cosmetic collection.
+A League-first gaming companion with a dashboard, champion and skin galleries, match review, cosmetic collections, and a server-side Riot match-history handler.
 
-## Included
-- A responsive dark workspace with lime accents and keyboard-accessible navigation.
-- Twelve champions with official artwork, descriptions, ability overviews, and a local favorite pool.
-- Eight showcase skins with manual ownership, wishlisting, search, filters, and full artwork previews.
-- Six explicitly fictional matches with example decisions, timelines, derived statistics, and selectable next-game focus.
-- Device-local preferences in versioned browser storage. No Riot account connection, live match import, or automated analysis.
+## Installation
 
-## Development
-This project uses the bundled Vinext/React starter. Install with `npm run install:ci`, and build with `npm run build`. Preserve the Sites build integration and `.openai/hosting.json` identity.
+See [INSTALLATION.md](INSTALLATION.md) for requirements, local setup, build commands, Riot API configuration, troubleshooting, and Vercel migration requirements.
 
-## Game data
-Artwork and champion descriptions: Riot Games Data Dragon 16.17.1. See `public/asset-credits.json` for provenance. The catalog is a fixed prototype subset; role and practice notes are introductory guidance, not current build recommendations. Match observations and initial collection ownership are sample content.
+## Hosting
 
-## Prototype boundaries
-Only League of Legends is implemented. Other games are represented as planned in the game selector. Data stays in the browser where the prototype is used, with an in-memory fallback if storage is unavailable. Clearing browser data resets local changes.
+This repository is an export of the ChatGPT Site source. Its current scripts use Vinext and Cloudflare Workers. Vercel deployment requires adapting the build and server endpoints; the installation guide explains the remaining work.
 
-## Riot match history
-Set `RIOT_API_KEY` as a secret using Sites runtime environment settings, then redeploy. No key is included in source or browser code. Development keys expire; a public app should use a Riot-approved production key. `/api/riot/history` resolves Riot ID through Account-V1 and fetches five Match-V5 records per page. Supports regional routing, queue filtering, pagination, missing/expired credentials, not-found accounts, timeouts and rate-limit responses. Custom games are excluded. Data Dragon supplies artwork; it cannot provide player history or skin ownership. Live results and the existing illustrative coaching matches are labeled separately.
+## Data and credentials
+
+Data Dragon supplies champion and skin artwork. Live player history uses Riot APIs through a server-side `RIOT_API_KEY`, configured separately in the hosting environment. No live runtime credentials are included in this repository. Data Dragon does not provide a player's skin ownership.
+
+Favorites, collection selections, and preferences use browser-local storage. Illustrative match content is separate from live match results. See `public/asset-credits.json` for bundled artwork credits.
