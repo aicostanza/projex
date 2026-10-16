@@ -1,0 +1,19 @@
+{
+  "version": "16.17.1",
+  "sources": [
+    {
+      "title": "Riot Games Data Dragon documentation",
+      "url": "https://developer.riotgames.com/docs/lol#data-dragon"
+    },
+    {
+      "title": "Riot Games champion asset documentation",
+      "url": "https://developer.riotgames.com/docs/lol#data-dragon_champions"
+    },
+    {
+      "title": "Data Dragon versions",
+      "url": "https://ddragon.leagueoflegends.com/api/versions.json"
+    }
+  ],
+  "attribution": "Champion names, game data, and artwork © Riot Games, Inc.",
+  "notice": "Project X is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc."
+}
